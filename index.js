@@ -7,12 +7,26 @@ let currentInput = "";
 let justCalculated = false;
 
 //  Display function
+function adjustFontSize() {
+  let length = display.textContent.length;
+
+  if (length > 10) {
+    display.style.fontSize = "20px";
+  } else if (length > 10) {
+    display.style.fontSize = "28px";
+  } else {
+    display.style.fontSize = "33px";
+  }
+}
+
 function updateDisplay() {
   if (firstNumber !== null && operator !== null) {
     display.textContent = firstNumber + " " + operator + " " + currentInput;
   } else {
     display.textContent = currentInput || "0";
   }
+
+  adjustFontSize();
 }
 
 buttons.forEach((button) => {
